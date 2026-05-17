@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 232 65% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 232 65% 8%;
+
+    --primary: 233 72% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 232 36% 96%;
+    --secondary-foreground: 232 65% 8%;
+
+    --muted: 232 30% 96%;
+    --muted-foreground: 232 14% 40%;
+
+    --accent: 232 36% 96%;
+    --accent-foreground: 232 65% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 232 16% 90%;
+    --input: 232 16% 90%;
+    --ring: 233 72% 32%;
+
+    --radius: 0.85rem;
+  }
+
+  .dark {
+    --background: 232 50% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 232 40% 7%;
+    --card-foreground: 0 0% 98%;
+
+    --primary: 232 72% 60%;
+    --primary-foreground: 232 65% 8%;
+
+    --secondary: 232 30% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 232 25% 12%;
+    --muted-foreground: 232 12% 65%;
+
+    --accent: 232 30% 14%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 232 18% 18%;
+    --input: 232 18% 18%;
+    --ring: 232 72% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    @apply bg-brand-700 text-white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+  .mask-fade-x {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    );
+  }
+  .glass {
+    background-color: hsl(var(--background) / 0.7);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+  }
+  .glass-dark {
+    background-color: hsl(232 50% 4% / 0.6);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+  }
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+}
