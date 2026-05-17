@@ -10,7 +10,7 @@ const badgeVariants = cva(
         default:
           "bg-secondary text-secondary-foreground ring-border",
         brand:
-          "bg-brand-50 text-brand-800 ring-brand-700/15",
+          "bg-brand-50 text-brand-800 ring-brand-700/15 dark:bg-brand-700/15 dark:text-brand-200 dark:ring-brand-700/30",
         outline: "bg-background text-foreground ring-border",
         success:
           "bg-emerald-50 text-emerald-700 ring-emerald-600/20",

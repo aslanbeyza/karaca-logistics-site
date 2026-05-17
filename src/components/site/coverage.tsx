@@ -47,7 +47,7 @@ export function Coverage() {
                 className="group flex items-center justify-between gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-brand-700/30 hover:shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <span className="grid size-10 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-inset ring-brand-700/15 transition-colors group-hover:bg-brand-700 group-hover:text-white">
+                  <span className="grid size-10 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-inset ring-brand-700/15 transition-colors group-hover:bg-brand-700 group-hover:text-white dark:bg-brand-700/15 dark:text-brand-200 dark:ring-brand-700/30 dark:group-hover:bg-brand-700 dark:group-hover:text-white">
                     <MapPin className="size-4" />
                   </span>
                   <div className="leading-tight">

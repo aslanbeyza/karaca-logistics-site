@@ -15,7 +15,7 @@ export function CTA() {
           <div className="relative isolate overflow-hidden rounded-[32px] border border-brand-700/20 bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 px-6 py-14 text-white sm:px-12 sm:py-20">
             <div
               aria-hidden
-              className="absolute inset-0 -z-10 bg-grid-pattern bg-grid-pattern opacity-[0.08]"
+              className="absolute inset-0 -z-10 bg-grid opacity-[0.08]"
             />
             <div
               aria-hidden

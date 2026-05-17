@@ -46,7 +46,7 @@ export function Footer() {
     <footer className="relative overflow-hidden border-t border-border bg-brand-950 text-white">
       <div
         aria-hidden
-        className="absolute inset-0 bg-grid-pattern bg-grid-pattern opacity-[0.04]"
+        className="absolute inset-0 bg-grid opacity-[0.04]"
       />
       <div className="container relative">
         <div className="grid gap-10 py-16 lg:grid-cols-12">

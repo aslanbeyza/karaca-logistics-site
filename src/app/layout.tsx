@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const sans = Inter({
   subsets: ["latin", "latin-ext"],
@@ -99,9 +100,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" className={`${sans.variable} ${display.variable}`}>
+    <html
+      lang="tr"
+      suppressHydrationWarning
+      className={`${sans.variable} ${display.variable}`}
+    >
       <body className="min-h-screen bg-background font-sans text-foreground">
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

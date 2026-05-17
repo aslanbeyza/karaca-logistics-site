@@ -95,7 +95,7 @@ export function QuoteForm() {
     <Section id="quote" className="relative overflow-hidden bg-background">
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-grid-pattern bg-grid-pattern mask-fade-b opacity-50"
+        className="absolute inset-0 -z-10 bg-grid mask-fade-b opacity-50"
       />
       <div className="container">
         <div className="grid items-start gap-10 lg:grid-cols-12">
@@ -118,7 +118,7 @@ export function QuoteForm() {
                 className="group flex items-center justify-between gap-4 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-brand-700/30 hover:shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <span className="grid size-11 place-items-center rounded-xl bg-brand-50 text-brand-700">
+                  <span className="grid size-11 place-items-center rounded-xl bg-brand-50 text-brand-700 dark:bg-brand-700/15 dark:text-brand-200">
                     <Phone className="size-5" />
                   </span>
                   <div className="leading-tight">
@@ -140,7 +140,7 @@ export function QuoteForm() {
                 className="group flex items-center justify-between gap-4 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-emerald-500/30 hover:shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <span className="grid size-11 place-items-center rounded-xl bg-emerald-50 text-emerald-700">
+                  <span className="grid size-11 place-items-center rounded-xl bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
                     <MessageCircle className="size-5" />
                   </span>
                   <div className="leading-tight">
@@ -157,7 +157,7 @@ export function QuoteForm() {
 
               <div className="flex items-center justify-between gap-4 rounded-2xl border border-dashed border-border bg-secondary/40 p-4">
                 <div className="flex items-center gap-3">
-                  <span className="grid size-11 place-items-center rounded-xl bg-amber-50 text-amber-700">
+                  <span className="grid size-11 place-items-center rounded-xl bg-amber-50 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
                     <Clock4 className="size-5" />
                   </span>
                   <div className="leading-tight">

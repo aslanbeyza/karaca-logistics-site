@@ -31,7 +31,7 @@ export function Hero() {
     >
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-grid-pattern bg-grid-pattern mask-fade-b opacity-60"
+        className="absolute inset-0 -z-10 bg-grid mask-fade-b opacity-60"
       />
       <div
         aria-hidden
@@ -57,7 +57,7 @@ export function Hero() {
                 <span className="relative z-10">stressiz</span>
                 <span
                   aria-hidden
-                  className="absolute -bottom-1.5 left-0 right-0 -z-0 h-3 rounded-md bg-brand-200/70"
+                  className="absolute -bottom-1.5 left-0 right-0 -z-0 h-3 rounded-md bg-brand-200/70 dark:bg-brand-700/50"
                 />
               </span>{" "}
               taşınmanın en hızlı yolu.
@@ -145,7 +145,7 @@ export function Hero() {
                 aria-hidden
                 className="absolute -inset-6 -z-10 rounded-[40px] bg-gradient-to-tr from-brand-700/10 via-brand-200/30 to-transparent blur-2xl"
               />
-              <div className="relative overflow-hidden rounded-[32px] border border-border/70 bg-gradient-to-br from-brand-50 via-white to-white p-6 shadow-[0_30px_80px_-30px_rgba(23,34,138,0.35)]">
+              <div className="relative overflow-hidden rounded-[32px] border border-border/70 bg-gradient-to-br from-brand-50 via-white to-white p-6 shadow-[0_30px_80px_-30px_rgba(23,34,138,0.35)] dark:border-white/10 dark:from-brand-100 dark:via-white dark:to-brand-50">
                 <div className="relative aspect-[5/4] w-full">
                   <Image
                     src="/images/truck.svg"
@@ -161,7 +161,7 @@ export function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6, duration: 0.6 }}
-                  className="absolute left-4 top-4 flex items-center gap-2 rounded-2xl border border-border/70 bg-background/90 px-3 py-2 shadow-md backdrop-blur sm:left-6 sm:top-6"
+                  className="absolute left-4 top-4 flex items-center gap-2 rounded-2xl border border-black/[0.06] bg-white/90 px-3 py-2 text-brand-950 shadow-md backdrop-blur sm:left-6 sm:top-6"
                 >
                   <span className="relative flex size-2.5">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -174,14 +174,14 @@ export function Hero() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 0.6 }}
-                  className="absolute right-4 top-4 flex items-center gap-3 rounded-2xl border border-border/70 bg-background/95 px-3 py-2 shadow-md backdrop-blur sm:right-6 sm:top-6"
+                  className="absolute right-4 top-4 flex items-center gap-3 rounded-2xl border border-black/[0.06] bg-white/95 px-3 py-2 text-brand-950 shadow-md backdrop-blur sm:right-6 sm:top-6"
                 >
                   <div className="grid size-9 place-items-center rounded-xl bg-brand-700 text-white">
                     <Truck className="size-4" />
                   </div>
                   <div className="leading-tight">
                     <div className="text-xs font-semibold">Bugün</div>
-                    <div className="text-[11px] text-muted-foreground">
+                    <div className="text-[11px] text-brand-950/60">
                       18 başarılı taşıma
                     </div>
                   </div>
@@ -191,7 +191,7 @@ export function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.95, duration: 0.6 }}
-                  className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 rounded-2xl border border-border/70 bg-background/95 p-3 shadow-lg backdrop-blur sm:bottom-6 sm:left-6 sm:right-6"
+                  className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 rounded-2xl border border-black/[0.06] bg-white/95 p-3 text-brand-950 shadow-lg backdrop-blur sm:bottom-6 sm:left-6 sm:right-6"
                 >
                   <div className="flex items-center gap-3">
                     <div className="grid size-10 place-items-center rounded-xl bg-emerald-100 text-emerald-700">
@@ -201,7 +201,7 @@ export function Hero() {
                       <div className="text-sm font-semibold">
                         +{site.stats.moves} taşıma
                       </div>
-                      <div className="text-xs text-muted-foreground">
+                      <div className="text-xs text-brand-950/60">
                         {site.stats.years} yıllık tecrübe
                       </div>
                     </div>

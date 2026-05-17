@@ -1,11 +1,19 @@
 "use client";
 
 import * as React from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Quote, Star } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
-import { FadeUp, StaggerGroup, StaggerItem } from "@/components/ui/motion-fade";
+import { FadeUp } from "@/components/ui/motion-fade";
 
-const testimonials = [
+type T = {
+  name: string;
+  role: string;
+  rating: number;
+  text: string;
+};
+
+const testimonials: T[] = [
   {
     name: "Elif Yılmaz",
     role: "Yenişehir → Mezitli",
@@ -50,9 +58,48 @@ const testimonials = [
   },
 ];
 
-export function Testimonials() {
+const loop = [...testimonials, ...testimonials];
+
+function TestimonialCard({ t }: { t: T }) {
   return (
-    <Section id="testimonials" className="bg-secondary/40">
+    <figure className="relative flex min-h-[280px] w-[min(calc(100vw-4rem),22rem)] shrink-0 flex-col gap-4 rounded-3xl border border-border bg-background p-6 shadow-sm sm:min-h-[300px] sm:w-[26rem] sm:p-7">
+      <Quote
+        aria-hidden
+        className="pointer-events-none absolute right-5 top-5 size-8 shrink-0 text-brand-100 dark:text-brand-700/40 sm:right-6 sm:top-6 sm:size-9"
+        strokeWidth={1.5}
+      />
+      <div className="flex shrink-0 items-center gap-1">
+        {[...Array(t.rating)].map((_, starIndex) => (
+          <Star
+            key={`${t.name}-star-${starIndex}`}
+            className="size-4 shrink-0 fill-amber-400 text-amber-400"
+          />
+        ))}
+      </div>
+      <blockquote className="line-clamp-5 text-[15px] leading-relaxed text-foreground/90 sm:line-clamp-6">
+        &ldquo;{t.text}&rdquo;
+      </blockquote>
+      <figcaption className="mt-auto flex shrink-0 items-center gap-3 border-t border-border pt-5">
+        <div className="grid size-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-brand-300 to-brand-700 text-xs font-semibold text-white">
+          {t.name
+            .split(" ")
+            .map((n) => n[0])
+            .join("")}
+        </div>
+        <div className="min-w-0 leading-tight">
+          <div className="truncate text-sm font-semibold">{t.name}</div>
+          <div className="truncate text-xs text-muted-foreground">{t.role}</div>
+        </div>
+      </figcaption>
+    </figure>
+  );
+}
+
+export function Testimonials() {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <Section id="testimonials" className="overflow-hidden bg-secondary/40">
       <div className="container">
         <FadeUp>
           <SectionHeading
@@ -60,46 +107,50 @@ export function Testimonials() {
             title={
               <>
                 Bizi en iyi{" "}
-                <span className="text-brand-700">müşterilerimiz</span> anlatır
+                <span className="text-brand-700 dark:text-brand-300">
+                  müşterilerimiz
+                </span>{" "}
+                anlatır
               </>
             }
             description="Mersin'de binlerce ailenin yeni evine taşınmasına eşlik ettik. İşte bazı yorumları."
           />
         </FadeUp>
+      </div>
 
-        <StaggerGroup className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t) => (
-            <StaggerItem key={t.name}>
-              <figure className="group relative flex h-full flex-col gap-5 rounded-3xl border border-border bg-background p-7 transition-all hover:-translate-y-0.5 hover:border-brand-700/30 hover:shadow-[0_20px_50px_-25px_rgba(23,34,138,0.25)]">
-                <Quote
-                  aria-hidden
-                  className="absolute right-6 top-6 size-9 text-brand-100"
-                  strokeWidth={1.5}
-                />
-                <div className="flex items-center gap-1">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="size-4 fill-amber-400 text-amber-400"
-                    />
-                  ))}
-                </div>
-                <blockquote className="text-[15px] leading-relaxed text-foreground/90">
-                  "{t.text}"
-                </blockquote>
-                <figcaption className="mt-auto flex items-center gap-3 border-t border-border pt-5">
-                  <div className="grid size-10 place-items-center rounded-full bg-gradient-to-br from-brand-300 to-brand-700 text-sm font-semibold text-white">
-                    {t.name.split(" ").map((n) => n[0]).join("")}
+      <div className="relative mt-14 w-full">
+        {!reduceMotion ? (
+          <div className="mask-fade-x overflow-hidden pb-2">
+            <motion.div
+              className="flex w-max flex-nowrap gap-5 px-5 sm:gap-6 sm:px-6"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                duration: 75,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+            >
+              {loop.map((t, i) => (
+                <TestimonialCard key={`${t.name}-${i}`} t={t} />
+              ))}
+            </motion.div>
+          </div>
+        ) : (
+          <>
+            <div className="-mx-4 overflow-x-auto overflow-y-hidden pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden">
+              <div className="flex min-w-max gap-5 px-4 snap-x snap-mandatory pt-1 sm:px-6 md:justify-center">
+                {testimonials.map((t) => (
+                  <div key={t.name} className="snap-start shrink-0">
+                    <TestimonialCard t={t} />
                   </div>
-                  <div className="leading-tight">
-                    <div className="text-sm font-semibold">{t.name}</div>
-                    <div className="text-xs text-muted-foreground">{t.role}</div>
-                  </div>
-                </figcaption>
-              </figure>
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
+                ))}
+              </div>
+            </div>
+            <p className="mx-auto mt-3 max-w-2xl px-4 text-center text-xs text-muted-foreground">
+              Yorumları yan kaydırarak inceleyebilirsiniz.
+            </p>
+          </>
+        )}
       </div>
     </Section>
   );

@@ -58,7 +58,7 @@ export function WhyUs() {
     <Section className="relative overflow-hidden bg-brand-950 text-white">
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-grid-pattern bg-grid-pattern opacity-[0.06]"
+        className="absolute inset-0 -z-10 bg-grid opacity-[0.06]"
       />
       <div
         aria-hidden

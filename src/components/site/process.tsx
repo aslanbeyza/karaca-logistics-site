@@ -60,7 +60,7 @@ export function Process() {
                     <div className="grid size-12 place-items-center rounded-2xl bg-brand-700 text-white">
                       <Icon className="size-5" />
                     </div>
-                    <span className="font-display text-3xl font-bold text-brand-700/15">
+                    <span className="font-display text-3xl font-bold text-brand-700/15 dark:text-brand-200/15">
                       {s.step}
                     </span>
                   </div>

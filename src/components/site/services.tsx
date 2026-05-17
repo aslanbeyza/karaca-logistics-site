@@ -93,7 +93,7 @@ export function Services() {
                     className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-brand-700/0 blur-3xl transition-all duration-500 group-hover:bg-brand-700/15"
                   />
                   <div className="flex items-center justify-between">
-                    <div className="grid size-12 place-items-center rounded-2xl bg-brand-50 text-brand-700 ring-1 ring-inset ring-brand-700/15 transition-colors group-hover:bg-brand-700 group-hover:text-white">
+                    <div className="grid size-12 place-items-center rounded-2xl bg-brand-50 text-brand-700 ring-1 ring-inset ring-brand-700/15 transition-colors group-hover:bg-brand-700 group-hover:text-white dark:bg-brand-700/15 dark:text-brand-200 dark:ring-brand-700/30 dark:group-hover:bg-brand-700 dark:group-hover:text-white">
                       <Icon className="size-6" />
                     </div>
                     <ArrowUpRight className="size-5 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand-700" />

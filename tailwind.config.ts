@@ -70,13 +70,8 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        "grid-pattern":
-          "linear-gradient(to right, rgba(23,34,138,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(23,34,138,0.06) 1px, transparent 1px)",
         "radial-fade":
           "radial-gradient(ellipse at top, hsl(var(--background)) 0%, hsl(var(--background)) 50%, transparent 100%)",
-      },
-      backgroundSize: {
-        "grid-pattern": "32px 32px",
       },
       keyframes: {
         "accordion-down": {
