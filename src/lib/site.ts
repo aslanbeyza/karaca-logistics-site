@@ -1,9 +1,22 @@
+function getSiteUrl() {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
+  }
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return "http://localhost:3000";
+}
+
 export const site = {
   name: "Karaca Nakliyat",
   shortName: "Karaca Nakliyat",
   description:
     "Karaca Nakliyat: Mersin'de stressiz, sigortalı ve aynı gün ekspertizli evden eve nakliyat hizmeti. Toroslar, Yenişehir, Mezitli, Akdeniz ve şehirler arası taşımacılık.",
-  url: "https://karacanakliyat.com",
+  url: getSiteUrl(),
   city: "Mersin",
   locale: "tr_TR",
   phone: "+90 545 916 25 13",
