@@ -8,7 +8,6 @@ import { Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { site, telLink, whatsappLink } from "@/lib/site";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 const nav = [
   { href: "#services", label: "Hizmetler" },
@@ -85,14 +84,12 @@ export function Navbar() {
                 {site.phoneDisplay}
               </a>
             </Button>
-            <ThemeToggle />
             <Button asChild variant="primary" size="default">
               <a href="#quote">Hemen Teklif Al</a>
             </Button>
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
-            <ThemeToggle />
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}

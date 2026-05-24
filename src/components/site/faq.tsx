@@ -30,16 +30,8 @@ const faqs = [
     a: "Evet. Streç film, baloncuklu naylon, karton kutu, mobilya bezi ve özel cam/piano kasaları dahil tüm paketleme malzemeleri tarafımızca sağlanır. İsterseniz sadece paketleme hizmeti de alabilirsiniz.",
   },
   {
-    q: "Asansörlü taşıma hizmeti veriyor musunuz?",
-    a: "Evet. Yüksek katlı binalar veya dar merdiven yapıları için modern asansörlü kamyonlarımız mevcuttur. Bu sayede eşyalar daha hızlı ve güvenli şekilde taşınır.",
-  },
-  {
     q: "Şehirler arası taşıma ne kadar sürer?",
     a: "Mesafeye bağlı olarak değişiklik göstermekle birlikte, Mersin'den çoğu büyükşehre 1-2 gün içerisinde teslimat yapıyoruz. Acil teslimat ihtiyaçlarınız için özel araç seçeneği de sunabiliyoruz.",
-  },
-  {
-    q: "Ödeme nasıl yapılıyor?",
-    a: "Nakit, kredi kartı (taksitli) ve havale/EFT seçenekleri ile ödeme alıyoruz. Kurumsal taşımalarda faturalı ve vadeli ödeme imkânımız bulunmaktadır.",
   },
   {
     q: "Hafta sonu ve gece taşıma yapıyor musunuz?",

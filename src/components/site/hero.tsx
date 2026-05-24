@@ -52,7 +52,7 @@ export function Hero() {
             </Badge>
 
             <h1 className="font-display text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-[68px]">
-              Mersin'de{" "}
+              Mersin evden eve nakliyat ile{" "}
               <span className="relative inline-block">
                 <span className="relative z-10">stressiz</span>
                 <span

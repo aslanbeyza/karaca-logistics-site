@@ -7,7 +7,6 @@ import {
   PackageCheck,
   Route,
   Sofa,
-  Warehouse,
   ArrowUpRight,
 } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
@@ -48,13 +47,6 @@ const services = [
     title: "Paketleme Hizmeti",
     description:
       "Streç film, baloncuklu naylon, mobilya bezi ve özel kasalarla profesyonel ambalajlama hizmeti.",
-    href: "#quote",
-  },
-  {
-    icon: Warehouse,
-    title: "Depolama & Saklama",
-    description:
-      "Kameralı, klimalı ve güvenli depolarımızda kısa ve uzun süreli eşya saklama imkânı.",
     href: "#quote",
   },
 ];

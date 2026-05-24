@@ -15,7 +15,6 @@ const cols = [
       { label: "Şehirler Arası", href: "#services" },
       { label: "Parça Eşya", href: "#services" },
       { label: "Paketleme", href: "#services" },
-      { label: "Depolama", href: "#services" },
     ],
   },
   {

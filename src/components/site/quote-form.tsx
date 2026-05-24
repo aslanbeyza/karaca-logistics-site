@@ -46,13 +46,12 @@ const serviceTypes = [
   "Şehirler Arası",
   "Parça Eşya",
   "Paketleme",
-  "Depolama",
 ];
 
 export function QuoteForm() {
-  const [status, setStatus] = React.useState<"idle" | "submitting" | "success">(
-    "idle",
-  );
+  const [status, setStatus] = React.useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
 
   const {
     register,
@@ -70,25 +69,23 @@ export function QuoteForm() {
 
   async function onSubmit(values: FormValues) {
     setStatus("submitting");
-    // Replace with real API endpoint or Resend / Formspree integration
-    await new Promise((r) => setTimeout(r, 900));
-    const message = encodeURIComponent(
-      [
-        `Yeni Teklif Talebi`,
-        `Ad: ${values.name}`,
-        `Telefon: ${values.phone}`,
-        `Nereden: ${values.from}`,
-        `Nereye: ${values.to}`,
-        `Hizmet: ${values.type}`,
-        values.date ? `Tarih: ${values.date}` : null,
-        values.note ? `Not: ${values.note}` : null,
-      ]
-        .filter(Boolean)
-        .join("\n"),
-    );
-    window.open(`https://wa.me/${site.whatsapp}?text=${message}`, "_blank");
-    setStatus("success");
-    reset();
+
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Gönderim başarısız");
+      }
+
+      setStatus("success");
+      reset();
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -132,7 +129,6 @@ export function QuoteForm() {
                 </div>
                 <ArrowRight className="size-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand-700" />
               </a>
-
               <a
                 href={whatsappLink()}
                 target="_blank"
@@ -294,6 +290,20 @@ export function QuoteForm() {
                   {errors.kvkk ? (
                     <p className="text-xs text-destructive">
                       {errors.kvkk.message as string}
+                    </p>
+                  ) : null}
+                  {status === "error" ? (
+                    <p className="text-xs text-destructive">
+                      Gönderim başarısız oldu. Lütfen tekrar deneyin veya{" "}
+                      <a href={telLink()} className="underline">
+                        bizi arayın
+                      </a>
+                      .
+                    </p>
+                  ) : null}
+                  {status === "success" ? (
+                    <p className="text-xs text-emerald-700">
+                      Talebiniz alındı. En kısa sürede size dönüş yapacağız.
                     </p>
                   ) : null}
                 </div>
