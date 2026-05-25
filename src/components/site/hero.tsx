@@ -6,16 +6,12 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   CheckCircle2,
-  Shield,
   Sparkles,
-  Star,
-  Truck,
-  Users,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { site, whatsappLink } from "@/lib/site";
+import { whatsappLink } from "@/lib/site";
 
 const bullets = [
   "Aynı gün ücretsiz ekspertiz",
@@ -95,31 +91,31 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 30 }}
+            initial={{ opacity: 0, scale: 0.98, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{
-              duration: 1,
+              duration: 0.9,
               delay: 0.15,
               ease: [0.21, 0.47, 0.32, 0.98],
             }}
             className="relative lg:col-span-5"
           >
-            <div className="relative mx-auto max-w-xl">
+            <div className="relative mx-auto max-w-md lg:max-w-none">
               <div
                 aria-hidden
-                className="absolute -inset-6 -z-10 rounded-[40px] bg-gradient-to-tr from-brand-700/10 via-brand-200/30 to-transparent blur-2xl"
+                className="absolute -inset-2 rounded-[1.75rem] bg-brand-100/40 blur-2xl"
               />
-              <div className="relative overflow-hidden border border-border/70 bg-gradient-to-br from-brand-50 via-white to-white p-6 shadow-[0_30px_80px_-30px_rgba(23,34,138,0.35)] dark:border-white/10 dark:from-brand-100 dark:via-white dark:to-brand-50">
+              <div className="relative overflow-hidden rounded-[1.75rem] bg-brand-50/30 shadow-[0_20px_50px_-20px_rgba(23,34,138,0.2)]">
                 <div className="relative aspect-[5/4] w-full">
                   <Image
-                    src="/images/3.jpeg"
-                    alt="Mersin nakliyat aracı"
+                    src="/images/4.jpeg"
+                    alt="Karaca Nakliyat Mersin nakliyat aracı"
                     fill
                     priority
-                    sizes="(max-width:1024px) 90vw, 520px"
-                    className="object-contain"
+                    sizes="(max-width:1024px) 90vw, 480px"
+                    className="object-cover object-[center_42%]"
                   />
-                </div> 
+                </div>
               </div>
             </div>
           </motion.div>
