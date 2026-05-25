@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { whatsappLink } from "@/lib/site";
 
 export function WhatsAppFloating() {
@@ -15,14 +15,10 @@ export function WhatsAppFloating() {
       target="_blank"
       rel="noreferrer"
       aria-label="WhatsApp'tan yaz"
-      className="group fixed bottom-5 right-5 z-50 flex items-center gap-3 rounded-full bg-[#25D366] py-3 pl-4 pr-5 text-sm font-semibold text-white shadow-[0_20px_50px_-15px_rgba(37,211,102,0.6)] transition-all hover:scale-[1.03] hover:bg-[#1ebc59] sm:bottom-7 sm:right-7"
+      className="group fixed bottom-5 right-5 z-50 grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_4px_20px_rgba(37,211,102,0.45)] transition-transform hover:scale-105 hover:bg-[#1ebc59] sm:bottom-7 sm:right-7 sm:size-16"
     >
-      <span className="relative grid size-7 place-items-center rounded-full bg-white/15">
-        <MessageCircle className="size-4" />
-        <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-white/20" />
-      </span>
-      <span className="hidden xs:inline">WhatsApp</span>
-      <span className="sm:hidden">WhatsApp</span>
+      <WhatsAppIcon className="size-7 sm:size-8" />
+      <span className="pointer-events-none absolute inset-0 -z-10 animate-ping rounded-full bg-[#25D366]/40" />
     </motion.a>
   );
 }

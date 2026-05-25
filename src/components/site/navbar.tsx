@@ -45,21 +45,21 @@ export function Navbar() {
               : "border border-transparent bg-transparent",
           )}
         >
-          <Link href="#top" className="flex items-center gap-2.5 group">
-            <span className="relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-brand-700 ring-1 ring-brand-700/20 transition-transform group-hover:scale-105">
+          <Link href="#top" className="flex items-center gap-3 group">
+            <span className="relative inline-flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-brand-700 ring-1 ring-brand-700/20 transition-transform group-hover:scale-105 sm:h-14 sm:w-14">
               <Image
                 src="/images/logo.svg"
                 alt="Logo"
-                width={28}
-                height={28}
-                className="object-contain invert brightness-0"
+                width={44}
+                height={44}
+                className="h-9 w-9 object-contain invert brightness-0 sm:h-10 sm:w-10"
               />
             </span>
             <div className="flex flex-col leading-none">
-              <span className="font-display text-base font-bold tracking-tight">
+              <span className="font-display text-lg font-bold tracking-tight sm:text-xl">
                 {site.shortName}
               </span>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+              <span className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground sm:text-xs">
                 Mersin • Nakliyat
               </span>
             </div>

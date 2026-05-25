@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   CheckCircle2,
-  MessageCircle,
   Shield,
   Sparkles,
   Star,
   Truck,
   Users,
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { site, whatsappLink } from "@/lib/site";
@@ -78,7 +78,7 @@ export function Hero() {
               ))}
             </ul>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="my-2 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="primary" size="xl">
                 <a href="#quote">
                   Ücretsiz Teklif Al
@@ -87,46 +87,10 @@ export function Hero() {
               </Button>
               <Button asChild variant="whatsapp" size="xl">
                 <a href={whatsappLink()} target="_blank" rel="noreferrer">
-                  <MessageCircle className="size-4" />
+                  <WhatsAppIcon className="size-4" />
                   WhatsApp'tan Yaz
                 </a>
               </Button>
-            </div>
-
-            <div className="mt-10 flex flex-wrap items-center gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <span
-                      key={i}
-                      className="grid size-8 place-items-center rounded-full border-2 border-background bg-gradient-to-br from-brand-300 to-brand-700 text-[10px] font-semibold text-white"
-                    >
-                      {String.fromCharCode(64 + i)}
-                    </span>
-                  ))}
-                </div>
-                <div className="leading-tight">
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="size-3.5 fill-amber-400 text-amber-400"
-                      />
-                    ))}
-                    <span className="ml-1 font-semibold">
-                      {site.rating.value}
-                    </span>
-                  </div>
-                  <span className="text-xs text-muted-foreground">
-                    {site.rating.count.toLocaleString("tr-TR")}+ mutlu müşteri
-                  </span>
-                </div>
-              </div>
-              <div className="hidden h-8 w-px bg-border sm:block" />
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Shield className="size-4 text-brand-700" />
-                <span>Tüm taşımalar sigortalıdır</span>
-              </div>
             </div>
           </motion.div>
 
@@ -145,71 +109,17 @@ export function Hero() {
                 aria-hidden
                 className="absolute -inset-6 -z-10 rounded-[40px] bg-gradient-to-tr from-brand-700/10 via-brand-200/30 to-transparent blur-2xl"
               />
-              <div className="relative overflow-hidden rounded-[32px] border border-border/70 bg-gradient-to-br from-brand-50 via-white to-white p-6 shadow-[0_30px_80px_-30px_rgba(23,34,138,0.35)] dark:border-white/10 dark:from-brand-100 dark:via-white dark:to-brand-50">
+              <div className="relative overflow-hidden border border-border/70 bg-gradient-to-br from-brand-50 via-white to-white p-6 shadow-[0_30px_80px_-30px_rgba(23,34,138,0.35)] dark:border-white/10 dark:from-brand-100 dark:via-white dark:to-brand-50">
                 <div className="relative aspect-[5/4] w-full">
                   <Image
-                    src="/images/truck.svg"
+                    src="/images/3.jpeg"
                     alt="Mersin nakliyat aracı"
                     fill
                     priority
                     sizes="(max-width:1024px) 90vw, 520px"
                     className="object-contain"
                   />
-                </div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.6 }}
-                  className="absolute left-4 top-4 flex items-center gap-2 rounded-2xl border border-black/[0.06] bg-white/90 px-3 py-2 text-brand-950 shadow-md backdrop-blur sm:left-6 sm:top-6"
-                >
-                  <span className="relative flex size-2.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500" />
-                  </span>
-                  <span className="text-xs font-semibold">Şu an aktif: 3 ekip</span>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8, duration: 0.6 }}
-                  className="absolute right-4 top-4 flex items-center gap-3 rounded-2xl border border-black/[0.06] bg-white/95 px-3 py-2 text-brand-950 shadow-md backdrop-blur sm:right-6 sm:top-6"
-                >
-                  <div className="grid size-9 place-items-center rounded-xl bg-brand-700 text-white">
-                    <Truck className="size-4" />
-                  </div>
-                  <div className="leading-tight">
-                    <div className="text-xs font-semibold">Bugün</div>
-                    <div className="text-[11px] text-brand-950/60">
-                      18 başarılı taşıma
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.95, duration: 0.6 }}
-                  className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 rounded-2xl border border-black/[0.06] bg-white/95 p-3 text-brand-950 shadow-lg backdrop-blur sm:bottom-6 sm:left-6 sm:right-6"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="grid size-10 place-items-center rounded-xl bg-emerald-100 text-emerald-700">
-                      <Users className="size-5" />
-                    </div>
-                    <div className="leading-tight">
-                      <div className="text-sm font-semibold">
-                        +{site.stats.moves} taşıma
-                      </div>
-                      <div className="text-xs text-brand-950/60">
-                        {site.stats.years} yıllık tecrübe
-                      </div>
-                    </div>
-                  </div>
-                  <Button asChild variant="primary" size="sm">
-                    <a href="#quote">Teklif</a>
-                  </Button>
-                </motion.div>
+                </div> 
               </div>
             </div>
           </motion.div>
