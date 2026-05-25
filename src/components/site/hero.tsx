@@ -109,7 +109,7 @@ export function Hero() {
                 <div className="relative aspect-[5/4] w-full">
                   <Image
                     src="/images/4.jpeg"
-                    alt="Karaca Nakliyat Mersin nakliyat aracı"
+                    alt="Mehmet Şirin Nakliyat Mersin nakliyat aracı"
                     fill
                     priority
                     sizes="(max-width:1024px) 90vw, 480px"

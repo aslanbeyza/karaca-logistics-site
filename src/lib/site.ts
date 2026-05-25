@@ -11,14 +11,14 @@ function getSiteUrl() {
   if (process.env.NODE_ENV === "development") {
     return "http://localhost:3000";
   }
-  return "https://karacanakliyat.com";
+  return "https://www.mehmetsirinnakliyat.com";
 }
 
 export const site = {
-  name: "Karaca Nakliyat",
-  shortName: "Karaca Nakliyat",
+  name: "Mehmet Şirin Nakliyat",
+  shortName: "Mehmet Şirin Nakliyat",
   description:
-    "Karaca Nakliyat: Mersin'de stressiz, sigortalı ve aynı gün ekspertizli evden eve nakliyat hizmeti. Toroslar, Yenişehir, Mezitli, Akdeniz ve şehirler arası taşımacılık.",
+    "Mehmet Şirin Nakliyat: Mersin'de stressiz, sigortalı ve aynı gün ekspertizli evden eve nakliyat hizmeti. Toroslar, Yenişehir, Mezitli, Akdeniz ve şehirler arası taşımacılık.",
   url: getSiteUrl(),
   city: "Mersin",
   locale: "tr_TR",

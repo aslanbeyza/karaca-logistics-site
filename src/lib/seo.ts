@@ -128,7 +128,8 @@ export function getWebSiteJsonLd() {
 export const seoKeywords = [
   "Mersin nakliyat",
   "Mersin evden eve nakliyat",
-  "Karaca Nakliyat",
+  "Mehmet Şirin Nakliyat",
+  "Şirin Nakliyat",
   "Toroslar nakliyat",
   "Yenişehir nakliyat",
   "Mezitli nakliyat",
