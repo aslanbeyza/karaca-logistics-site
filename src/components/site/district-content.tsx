@@ -19,7 +19,7 @@ export function DistrictSeoContent({ district }: DistrictSeoContentProps) {
             eyebrow={`${district.name} Nakliyat`}
             title={
               <>
-                {district.name}&apos;da güvenilir{" "}
+                {district.name} ilçesinde güvenilir{" "}
                 <span className="text-brand-700">evden eve taşımacılık</span>
               </>
             }
