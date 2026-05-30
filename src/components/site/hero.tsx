@@ -12,6 +12,7 @@ import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { whatsappLink } from "@/lib/site";
+import { heroImage } from "@/lib/vehicle-images";
 
 const bullets = [
   "Aynı gün ücretsiz ekspertiz",
@@ -107,11 +108,13 @@ export function Hero() {
               />
               <div className="relative overflow-hidden rounded-[0.25rem] bg-brand-50/30 shadow-[0_20px_50px_-20px_rgba(23,34,138,0.2)]">
                 <Image
-                  src="/images/image.png"
+                  src={heroImage.src}
                   alt="Mehmet Şirin Nakliyat Mersin nakliyat aracı"
-                  width={1392}
-                  height={1042}
+                  width={heroImage.width}
+                  height={heroImage.height}
                   priority
+                  placeholder="blur"
+                  blurDataURL={heroImage.blurDataURL}
                   sizes="(max-width:1024px) 90vw, 520px"
                   className="h-auto w-full"
                 />

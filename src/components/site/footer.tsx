@@ -65,7 +65,6 @@ export function Footer() {
               Mersin'in güvenilir nakliyat firması. 14 yıllık tecrübemizle
               evden eve, ofis ve şehirler arası taşımalarda sigortalı hizmet.
             </p>
-
             <ul className="mt-6 space-y-3 text-sm">
               <li className="flex items-center gap-3 text-white/85">
                 <Phone className="size-4 text-brand-200" />

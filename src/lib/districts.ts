@@ -1,3 +1,5 @@
+import { getDistrictVehicleImage } from "@/lib/vehicle-images";
+
 export type District = {
   name: string;
   slug: string;
@@ -5,23 +7,19 @@ export type District = {
   intro: string;
   highlights: string[];
   image: string;
+  imageWidth: number;
+  imageHeight: number;
+  blurDataURL: string;
   imageAlt: string;
 };
 
-const vehicleImages = [
-  "/images/image.png",
-  "/images/3.jpeg",
-  "/images/4.jpeg",
-  "/images/5.jpeg",
-  "/images/6.jpeg",
-  "/images/33.jpeg",
-  "/images/WhatsApp Image 2026-05-25 at 21.40.57.jpeg",
-] as const;
-
 function districtImage(index: number, name: string) {
-  const src = vehicleImages[index % vehicleImages.length];
+  const vehicle = getDistrictVehicleImage(index);
   return {
-    image: src,
+    image: vehicle.src,
+    imageWidth: vehicle.width,
+    imageHeight: vehicle.height,
+    blurDataURL: vehicle.blurDataURL,
     imageAlt: `Mehmet Şirin Nakliyat ${name} evden eve nakliyat aracı`,
   };
 }

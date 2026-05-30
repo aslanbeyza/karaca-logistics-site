@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
+import { DistrictNavLink } from "@/components/site/district-nav-link";
 import type { District } from "@/lib/districts";
-import { districtPath, getOtherDistricts } from "@/lib/districts";
+import { getOtherDistricts } from "@/lib/districts";
 import { site } from "@/lib/site";
 
 type DistrictSeoContentProps = {
@@ -71,9 +71,9 @@ export function DistrictNearby({ district }: DistrictNearbyProps) {
 
         <div className="mt-12 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
           {nearby.map((d) => (
-            <Link
+            <DistrictNavLink
               key={d.slug}
-              href={districtPath(d.slug)}
+              district={d}
               className="group flex items-center justify-between gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-brand-700/30 hover:shadow-md"
             >
               <div className="flex items-center gap-3">
@@ -88,7 +88,7 @@ export function DistrictNearby({ district }: DistrictNearbyProps) {
                 </div>
               </div>
               <ArrowRight className="size-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand-700" />
-            </Link>
+            </DistrictNavLink>
           ))}
         </div>
       </div>

@@ -99,9 +99,11 @@ export function DistrictHero({ district }: DistrictHeroProps) {
                 <Image
                   src={district.image}
                   alt={district.imageAlt}
-                  width={1392}
-                  height={1042}
+                  width={district.imageWidth}
+                  height={district.imageHeight}
                   priority
+                  placeholder="blur"
+                  blurDataURL={district.blurDataURL}
                   sizes="(max-width:1024px) 90vw, 520px"
                   className="h-auto w-full object-cover"
                 />

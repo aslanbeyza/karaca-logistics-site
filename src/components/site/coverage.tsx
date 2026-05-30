@@ -5,10 +5,30 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { FadeUp, StaggerGroup, StaggerItem } from "@/components/ui/motion-fade";
 import { Button } from "@/components/ui/button";
-import { districts, districtPath } from "@/lib/districts";
+import { DistrictNavLink } from "@/components/site/district-nav-link";
+import { districts } from "@/lib/districts";
 import { whatsappLink } from "@/lib/site";
+import { districtVehicleImages } from "@/lib/vehicle-images";
+import { preloadImages } from "@/lib/preload-image";
 
 export function Coverage() {
+  React.useEffect(() => {
+    const node = document.getElementById("coverage");
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        preloadImages(districtVehicleImages.map((v) => v.src));
+        observer.disconnect();
+      },
+      { rootMargin: "200px" },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Section id="coverage" className="bg-background">
       <div className="container">
@@ -28,8 +48,8 @@ export function Coverage() {
         <StaggerGroup className="mt-12 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {districts.map((d) => (
             <StaggerItem key={d.slug}>
-              <a
-                href={districtPath(d.slug)}
+              <DistrictNavLink
+                district={d}
                 className="group flex items-center justify-between gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-brand-700/30 hover:shadow-md"
               >
                 <div className="flex items-center gap-3">
@@ -44,7 +64,7 @@ export function Coverage() {
                   </div>
                 </div>
                 <ArrowRight className="size-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand-700" />
-              </a>
+              </DistrictNavLink>
             </StaggerItem>
           ))}
         </StaggerGroup>
