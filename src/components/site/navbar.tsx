@@ -10,11 +10,11 @@ import { cn } from "@/lib/utils";
 import { site, telLink, whatsappLink } from "@/lib/site";
 
 const nav = [
-  { href: "#services", label: "Hizmetler" },
-  { href: "#process", label: "Süreç" },
-  { href: "#coverage", label: "Bölgeler" },
-  { href: "#testimonials", label: "Yorumlar" },
-  { href: "#faq", label: "SSS" },
+  { href: "/#services", label: "Hizmetler" },
+  { href: "/#process", label: "Süreç" },
+  { href: "/#coverage", label: "Bölgeler" },
+  { href: "/#testimonials", label: "Yorumlar" },
+  { href: "/#faq", label: "SSS" },
 ];
 
 export function Navbar() {
@@ -45,7 +45,7 @@ export function Navbar() {
               : "border border-transparent bg-transparent",
           )}
         >
-          <Link href="#top" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <span className="relative inline-flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-brand-700 ring-1 ring-brand-700/20 transition-transform group-hover:scale-105 sm:h-14 sm:w-14">
               <Image
                 src="/images/logo.svg"
@@ -85,7 +85,7 @@ export function Navbar() {
               </a>
             </Button>
             <Button asChild variant="primary" size="default">
-              <a href="#quote">Hemen Teklif Al</a>
+              <a href="/#quote">Hemen Teklif Al</a>
             </Button>
           </div>
 

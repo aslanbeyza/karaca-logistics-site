@@ -5,22 +5,8 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { FadeUp, StaggerGroup, StaggerItem } from "@/components/ui/motion-fade";
 import { Button } from "@/components/ui/button";
+import { districts, districtPath } from "@/lib/districts";
 import { whatsappLink } from "@/lib/site";
-
-const districts = [
-  { name: "Toroslar", slug: "toroslar" },
-  { name: "Yenişehir", slug: "yenisehir" },
-  { name: "Mezitli", slug: "mezitli" },
-  { name: "Akdeniz", slug: "akdeniz" },
-  { name: "Tarsus", slug: "tarsus" },
-  { name: "Erdemli", slug: "erdemli" },
-  { name: "Silifke", slug: "silifke" },
-  { name: "Anamur", slug: "anamur" },
-  { name: "Bozyazı", slug: "bozyazi" },
-  { name: "Aydıncık", slug: "aydincik" },
-  { name: "Gülnar", slug: "gulnar" },
-  { name: "Mut", slug: "mut" },
-];
 
 export function Coverage() {
   return (
@@ -43,7 +29,7 @@ export function Coverage() {
           {districts.map((d) => (
             <StaggerItem key={d.slug}>
               <a
-                href={`#quote`}
+                href={districtPath(d.slug)}
                 className="group flex items-center justify-between gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-brand-700/30 hover:shadow-md"
               >
                 <div className="flex items-center gap-3">

@@ -5,37 +5,34 @@ import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { site, telLink } from "@/lib/site";
+import { districts, districtPath } from "@/lib/districts";
 
 const cols = [
   {
     title: "Hizmetler",
     links: [
-      { label: "Evden Eve Nakliyat", href: "#services" },
-      { label: "Ofis Taşıma", href: "#services" },
-      { label: "Şehirler Arası", href: "#services" },
-      { label: "Parça Eşya", href: "#services" },
-      { label: "Paketleme", href: "#services" },
+      { label: "Evden Eve Nakliyat", href: "/#services" },
+      { label: "Ofis Taşıma", href: "/#services" },
+      { label: "Şehirler Arası", href: "/#services" },
+      { label: "Parça Eşya", href: "/#services" },
+      { label: "Paketleme", href: "/#services" },
     ],
   },
   {
     title: "Bölgeler",
-    links: [
-      { label: "Toroslar", href: "#coverage" },
-      { label: "Yenişehir", href: "#coverage" },
-      { label: "Mezitli", href: "#coverage" },
-      { label: "Akdeniz", href: "#coverage" },
-      { label: "Tarsus", href: "#coverage" },
-      { label: "Erdemli", href: "#coverage" },
-    ],
+    links: districts.slice(0, 6).map((d) => ({
+      label: d.name,
+      href: districtPath(d.slug),
+    })),
   },
   {
     title: "Kurumsal",
     links: [
-      { label: "Hakkımızda", href: "#" },
-      { label: "Süreç", href: "#process" },
-      { label: "Müşteri Yorumları", href: "#testimonials" },
-      { label: "Sıkça Sorulanlar", href: "#faq" },
-      { label: "İletişim", href: "#quote" },
+      { label: "Hakkımızda", href: "/#why-us" },
+      { label: "Süreç", href: "/#process" },
+      { label: "Müşteri Yorumları", href: "/#testimonials" },
+      { label: "Sıkça Sorulanlar", href: "/#faq" },
+      { label: "İletişim", href: "/#quote" },
     ],
   },
 ];
@@ -50,7 +47,7 @@ export function Footer() {
       <div className="container relative">
         <div className="grid gap-10 py-16 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <Link href="#top" className="flex items-center gap-2.5">
+            <Link href="/" className="flex items-center gap-2.5">
               <span className="grid size-10 place-items-center rounded-xl bg-white/10 ring-1 ring-white/20">
                 <Image
                   src="/images/logo.svg"
