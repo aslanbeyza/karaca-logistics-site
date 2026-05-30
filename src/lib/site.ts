@@ -25,7 +25,7 @@ export const site = {
   phone: "+90 545 916 25 13",
   phoneDisplay: "+90 545 916 25 13",
   whatsapp: "905459162513",
-  email: "aslanbeyza3413@gmail.com",
+  email: "mehmetsirinnakliyat@gmail.com",
   address: "Toroslar / Mersin",
   workingHours: "Hafta içi 08:00 - 20:00 • 7 gün acil hat",
   areas: [
