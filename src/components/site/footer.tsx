@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { site, telLink } from "@/lib/site";
 
 const cols = [
@@ -86,6 +86,17 @@ export function Footer() {
                 <MapPin className="size-4 text-brand-200" />
                 <span>{site.address}</span>
               </li>
+              <li className="flex items-center gap-3 text-white/85">
+                <Instagram className="size-4 text-brand-200" />
+                <a
+                  href={site.social.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white"
+                >
+                  @{site.social.instagramHandle}
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -119,24 +130,12 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <a
               href={site.social.instagram}
+              target="_blank"
+              rel="noreferrer"
               aria-label="Instagram"
               className="grid size-9 place-items-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-white/40 hover:text-white"
             >
               <Instagram className="size-4" />
-            </a>
-            <a
-              href={site.social.facebook}
-              aria-label="Facebook"
-              className="grid size-9 place-items-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-white/40 hover:text-white"
-            >
-              <Facebook className="size-4" />
-            </a>
-            <a
-              href={site.social.youtube}
-              aria-label="YouTube"
-              className="grid size-9 place-items-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-white/40 hover:text-white"
-            >
-              <Youtube className="size-4" />
             </a>
           </div>
         </div>

@@ -79,7 +79,7 @@ export function getLocalBusinessJsonLd() {
         closes: "20:00",
       },
     ],
-    sameAs: Object.values(site.social).filter(Boolean),
+    sameAs: [site.social.instagram],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Nakliyat Hizmetleri",

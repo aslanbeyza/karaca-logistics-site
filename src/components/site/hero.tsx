@@ -103,19 +103,18 @@ export function Hero() {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               <div
                 aria-hidden
-                className="absolute -inset-2 rounded-[1.75rem] bg-brand-100/40 blur-2xl"
+                className="absolute -inset-2  bg-brand-100/40 blur-2xl"
               />
-              <div className="relative overflow-hidden rounded-[1.75rem] bg-brand-50/30 shadow-[0_20px_50px_-20px_rgba(23,34,138,0.2)]">
-                <div className="relative aspect-[5/4] w-full">
-                  <Image
-                    src="/images/4.jpeg"
-                    alt="Mehmet Şirin Nakliyat Mersin nakliyat aracı"
-                    fill
-                    priority
-                    sizes="(max-width:1024px) 90vw, 480px"
-                    className="object-cover object-[center_42%]"
-                  />
-                </div>
+              <div className="relative overflow-hidden rounded-[0.25rem] bg-brand-50/30 shadow-[0_20px_50px_-20px_rgba(23,34,138,0.2)]">
+                <Image
+                  src="/images/image.png"
+                  alt="Mehmet Şirin Nakliyat Mersin nakliyat aracı"
+                  width={1392}
+                  height={1042}
+                  priority
+                  sizes="(max-width:1024px) 90vw, 520px"
+                  className="h-auto w-full"
+                />
               </div>
             </div>
           </motion.div>

@@ -55,9 +55,8 @@ export const site = {
     coverage: "33+",
   },
   social: {
-    instagram: "https://instagram.com/",
-    facebook: "https://facebook.com/",
-    youtube: "https://youtube.com/",
+    instagram: "https://instagram.com/karacanakliyat33mersin",
+    instagramHandle: "karacanakliyat33mersin",
   },
 };
 
