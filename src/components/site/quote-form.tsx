@@ -221,7 +221,7 @@ export function QuoteForm() {
                   ) : null}
                 </div>
                 <div className="space-y-2 sm:col-span-1">
-                  <Label htmlFor="to">Nereye</Label>
+                  <Label htmlFor="to"></Label>
                   <Input
                     id="to"
                     placeholder="Örn. Mezitli / Mersin"

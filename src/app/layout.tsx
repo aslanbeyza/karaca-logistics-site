@@ -67,6 +67,9 @@ export const metadata: Metadata = {
     },
   },
   alternates: { canonical: site.url },
+  verification: {
+    google: "weulUGdtshUKHJdVqp-rgmks40mr24H8aUmVU8OnVVk",
+  },
   other: {
     "geo.region": "TR-33",
     "geo.placename": "Mersin",
